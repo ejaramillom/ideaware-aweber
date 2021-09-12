@@ -260,7 +260,7 @@ DEPENDENCIES
   knock (~> 2.1)
   listen (~> 3.3)
   minitest-reporters
-  pg (~> 0.18.4)
+  pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
