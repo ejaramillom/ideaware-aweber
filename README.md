@@ -10,3 +10,11 @@ Reemplazar 1 por ID de usuario
 Crear utilizando los parametros de entrada
 
 params.require(:user).permit(:email, :name, :phone, :sendinformationstatus)
+
+para instalar localmente:
+
+Clona este repositorio.
+
+Ejecuta bundle install, yarn install, rails db:migrate y rails db:seed.
+
+De ser necesario ejecutar bundle update
