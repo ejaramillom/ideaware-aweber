@@ -33,15 +33,12 @@
         </div>
         <div class="form-group">
           <label class="form-check-label" for="flexCheckDefault">
-            Recibir correos de la app
+            Deseas recibir correos de nosotros?
           </label>
           <%= f.check_box :sendinformationstatus, class: "form-control input-lg", type:"checkbox", value: false %>
         </div>
         <div>
           <%= f.submit "Almacenar Usuario", class: "btn btn-primary btn-lg btn-block" %>
-          <div class="text-right">
-            <%= link_to "Agregar usuario", new_user_path, class: "btn btn-primary" %>
-          </div>
         </div>
       <% end %>
     </div>
