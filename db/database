@@ -1,0 +1,1 @@
+User.create(email: "test@excercise.com", name: "test", phone: "604-555-6464")
