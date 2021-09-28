@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  respond_to :json, :xml
   before_action :set_user
 
   def show

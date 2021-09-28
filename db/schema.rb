@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_171127) do
+ActiveRecord::Schema.define(version: 2021_09_27_235557) do
+
+  create_table "client_applications", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "support_url"
+    t.string "callback_url"
+    t.string "key", limit: 40
+    t.string "secret", limit: 40
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["key"], name: "index_client_applications_on_key", unique: true
+  end
+
+  create_table "oauth_nonces", force: :cascade do |t|
+    t.string "nonce"
+    t.integer "timestamp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nonce", "timestamp"], name: "index_oauth_nonces_on_nonce_and_timestamp", unique: true
+  end
+
+  create_table "oauth_tokens", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "type", limit: 20
+    t.integer "client_application_id"
+    t.string "token", limit: 40
+    t.string "secret", limit: 40
+    t.string "callback_url"
+    t.string "verifier", limit: 20
+    t.string "scope"
+    t.datetime "authorized_at"
+    t.datetime "invalidated_at"
+    t.datetime "expires_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["token"], name: "index_oauth_tokens_on_token", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
